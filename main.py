@@ -8,14 +8,16 @@ class Post(BaseModel):
     title:str
     content:str
 
+my_posts=[{"title":"Title of post1","content":"Content of post1","id":1},{"title":"Title of post2","content":"Content of post2","id":2}]
 
 @app.get("/")
 def read():
-    return {"hello":"world"}
+    return {"hello":"world!"}
+
 
 @app.get("/posts")
 def get_posts():
-    return{"Data: This is your posts"}
+    return{"data":my_posts}
 
 @app.post("/createposts")
 def create_posts(new_post:Post):
